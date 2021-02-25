@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>хочу кушац</title>
+</head>
+<body>
+  <script type="text/javascript">
+  window.addEventListener('scroll', event => {
+    if (scrollY + innerHeight === document.body.scrollHeight) {
+      $(".something").css('display', 'flex');
+    }
+  });
+
+
+  </script>
+  <img src="spun.png" class="img_spun"alt="">
+  <img src="cup.PNG" class="img_cup"alt="">
+  <img src="fork.PNG" class="img_fork"alt="">
+  <img src="keks.PNG" class="img_keks"alt="">
+  <img src="botle.PNG" class="img_botle"alt="">
+  <img src="botle.PNG" class="img_botle"alt="">
+  <img src="cup_big.PNG" class="img_big_cup"alt="">
+  <img src="ghost.png" class="img_ghost" alt="">
+  <img src="ghost_second.png" class="img_ghost_2" alt="">
+<div class="container_content">
+<div class="container top">
+    <div class="box">
+        <!-- <div class="button_of_record">
+            <div class="red_circle"></div>
+            <div class="text_record">
+                Запись
+            </div>
+        </div> -->
+        <div class="button_of_object_found">
+           <div class="text_found">
+            Найден объект:
+           </div>
+           <div class="button_of_information">
+             <p id="textok">парящая ложка</p>
+             <div class="triangle">
+               <div class="object"></div>
+             </div>
+           </div>
+           <div  class="menu">
+             <div id="inform"></div>
+             <div id="object_number"></div>
+             <div id="description"></div>
+           </div>
+           </div>
+    </div>
+    <div class="ghost_text">
+      сфотографируйте, чтобы поймать призрака
+
+    </div>
+
+ <a href="index.html"><div class="something"></div></a>
+
+
+    <div class="box2">
+        <div class="button_of_progress">
+            <div class="text_of_paranormal">
+                Паранормальные явления:
+                <div class="scroll_progress">
+                  <span class="scroll_progress__text">0%</span>
+                </div>
+                <script type="text/javascript">
+                var scrollProgress = document.querySelector('.scroll_progress__text');
+            window.onscroll = function() {
+            var offset = window.pageYOffset || document.documentElement.scrollTop,
+                windowHeight = document.documentElement.scrollHeight-document.documentElement.clientHeight,
+                progress = Math.floor(offset/windowHeight * 100);
+            scrollProgress.innerHTML = progress + '%'
+            if (scrollProgress > 90) {
+                $("something").css('display', 'flex');
+            }
+             else {
+
+            }
+
+          };
+            </script>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container_center text_center">
+        <p>для начала записи нажимте кнопку <br></p>
+    </div>
+<div class="container2 bottom">
+    <div class="box_bottom">
+        <div class="time_animation">
+          <div class="time_animation_2">
+            <div class="container_for_stopwatch_static position_of">
+            <p class="text">00:00:00:00</p>
+            </div>
+          </div>
+          <div class="container_for_stopwatch">
+          <p id="random_number"></p>
+          <p>:</p>
+            <p id="random_number2"></p>
+            <p>:</p>
+            <p id="random_number3"></p>
+            <p>:</p>
+            <p id="random_number4"></p>
+          </div>
+        </div>
+    </div>
+    <div class="circle_border">
+       <div class="button_photo">
+           <div class="camera"></div>
+       </div>
+    </div>
+           <div class="box_bottom2">
+             <!-- <div class="button_of_record">
+                 <div class="red_circle"></div>
+                 <div class="text_record">
+                     Запись
+                 </div>
+             </div> -->
+             <div class="button_of_record_flex">
+               <div class="red_circle_flex"></div>
+               <div class="text_record_flex">
+                   Запись
+               </div>
+             </div>
+             <!-- <div class="button_of_object_found">
+                <div class="text_found">
+                 Найден объект:
+                </div>
+                <div class="button_of_information">
+                  <div class="triangle">
+                    <div class="object"></div>
+                  </div>
+                  <p class="textok">ложка бла бла</p>
+
+                </div>
+             </div> -->
+           </div>
+    </div>
+</div>
+<div id="animation">Time for animation</div>
+<div class="test"></div>
+<div class="fixed hidden">
+</div>
+<div id="animation">Time for animation</div>
+<div class="test"></div>
+<div class="fixed hidden"></div>
+<script type="text/javascript">
+          var $win = $(window),
+          limit = 1000;
+          function tgl (state) {
+          $fixed.toggleClass("hidden", state);
+          $("#textok").show();
+          $("#textok2").hide();
+          $(".triangle").show();
+          $(".button_of_information").css('height', 'auto');
+          $(".img_spun").fadeIn(1000);
+        }
+        $win.on("scroll", function () {
+        var top = $win.scrollTop();
+        if (top < limit) {
+            $(".fixed").css('display', 'fixed');
+            $(".img_spun").css('display', 'fixed');
+
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "парящая ложка";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('inform').innerHTML = '';
+            var h = document.createElement('inform');
+            h.innerHTML = "Информация";
+            document.getElementById('inform').appendChild(h);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-016 <br \/> Класс объекта: Спуны";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "Объект представляет собой небольшую левитирующую <br \/> в пространстве ложку, длиной около 17,5 см <br \/> и весом около 153 г. Содержать в небольшом стеклянном ящике. <br \/>Избегать физического контакта. ";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+
+        }
+        var top = $win.scrollTop();
+        limit2 = 1500;
+        if (top > 1500 && top < 1700) {
+            $(".img_ghost").fadeIn(1000);
+            $(".img_ghost").css('display', 'fixed');
+            $(".ghost_text").fadeIn(1000);
+        }
+         else {
+           $(".circle_border").click(function(){
+             $(".img_ghost").fadeOut(1000);
+             $(".ghost_text").fadeOut(500);
+             $("body").css('background-color', 'white', 500);
+              $("body").css('background-color', 'black');
+           });
+        }
+        var top = $win.scrollTop();
+        limit2 = 2000;
+        if (top > limit2) {
+            $(".img_cup").fadeIn(1000);
+            $(".fixed").css('display', 'fixed');
+            $(".img_cup").css('display', 'fixed');
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "призрачная кружка";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-002-INT <br \/> Класс объекта: Чашковые";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "Белая фарфоровая чашка, имеющая 8 см в высоту <br \/>и 10 см в диаметре. Oбычно не проявляет никакой аномальной активности. Любая жидкость налитая в BC-002-INT через несколько секунд испаряется.";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+            tgl(false);
+        }
+
+
+        var top = $win.scrollTop();
+        limit3 = 4000;
+        if (top > limit3) {
+            $(".img_fork").fadeIn(1000);
+            $(".fixed").css('display', 'fixed');
+            $(".img_fork").css('display', 'fixed');
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "летающая вилка";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-014-J <br \/> Класс объекта: Тризубки";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "Имеет форму старинной обеденной вилки, изъеденной временем, и которую, как показали анализы, не мыли с 1890-ых годов. <br \/>Анализ этого материала указывает, что SCP-014 в последний раз использовали для поедания какого-то блюда из говядины.";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+            tgl(false);
+        }
+
+        var top = $win.scrollTop();
+        limit4 = 5000;
+        if (top > limit4) {
+            $(".img_keks").fadeIn(1000);
+            $(".fixed").css('display', 'fixed');
+            $(".img_keks").css('display', 'fixed');
+              // $(".img_ghost").css('display', 'none');
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "кексовое существо";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-007-J <br \/> Класс объекта: Постные";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "С первого взгляда объект выглядит как черничный кекс. При неаккуратном обращении вполне способен навредить человеку, однако его свойства еще не до конца изучены. <br \/>";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+            tgl(false);
+        }
+        var top = $win.scrollTop();
+        limit2 = 5500;
+        if (top > 5500 && top < 5800) {
+            $(".img_ghost_2").fadeIn(1000);
+            $(".img_ghost_2").css('display', 'fixed');
+              $(".ghost_text").fadeIn(1000);
+
+        }
+         else {
+           $(".circle_border").click(function(){
+             $(".img_ghost_2").fadeOut(1000);
+               $(".ghost_text").fadeOut(500);
+           });
+        }
+        var top = $win.scrollTop();
+        limit5 = 6500;
+        if (top > limit5) {
+            $(".img_botle").fadeIn(1000);
+            $(".fixed").css('display', 'fixed');
+            $(".img_botle").css('display', 'fixed');
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "мистическая бутылка";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-1057-RU <br \/> Класс объекта: Осколки";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "четырёхмерный объект в форме бутылки Клейна. Главным аномальным свойством объекта является его способность непредсказуемым образом искажать любые двумерные либо трёхмерные предметы, имеющие правильную геометрическую форму. Эффект распространяется на изображения на бумаге, любого рода предметы, а также помещения.  <br \/>";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+            tgl(false);
+        }
+
+
+        var top = $win.scrollTop();
+        limit6 = 8000;
+        if (top > limit6) {
+            $(".img_big_cup").fadeIn(1000);
+            $(".fixed").css('display', 'fixed');
+            $(".img_big_cup").css('display', 'fixed');
+            document.getElementById('textok').innerHTML = '';
+            var p = document.createElement('textok');
+            p.innerHTML = "летающая кружка";
+            document.getElementById('textok').appendChild(p);
+
+            document.getElementById('object_number').innerHTML = '';
+            var c = document.createElement('object_number');
+            c.innerHTML = "Объект №: BC-1254-RU <br \/> Класс объекта: Пахнущий";
+            document.getElementById('object_number').appendChild(c);
+
+            document.getElementById('description').innerHTML = '';
+            var e = document.createElement('description');
+            e.innerHTML = "Представляет собой фарфоровую чашку со схематичным рисунком лица. Сбоку на чашке присутствует отпечаток пальца. Имеет ограниченные способности к материализации вещества внутри своего объема, однако, как правило, их хватает только на создание газов или мелких частиц. <br \/>";
+            document.getElementById('description').appendChild(e);
+        }
+         else {
+            tgl(false);
+        }
+        });
+</script>
+<canvas id="noisy-canvas"></canvas>
+
+<!-- <script type="text/javascript">
+
+let canvas = document.getElementById('noisy-canvas'),
+    ctx = canvas.getContext('2d');
+function main() {
+    window.addEventListener('resize', updateCanvasSize);
+    updateCanvasSize();
+    render();
+}
+function getRandom() {
+    return Math.random() * 255;
+}
+function render() {
+    let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
+    for (let i = 0; i < imageData.data.length; i += 4) {
+        const color = getRandom();
+        imageData.data[i]     = color;
+        imageData.data[i + 1] = color;
+        imageData.data[i + 2] = color;
+        imageData.data[i + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(render);
+}
+function updateCanvasSize() {
+    ctx.canvas.height = canvas.offsetHeight;
+    ctx.canvas.width  = canvas.offsetWidth;
+}
+main();
+</script> -->
+</body>
+</html>
